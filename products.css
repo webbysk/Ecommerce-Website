@@ -273,8 +273,26 @@ body {
     margin: auto;
 }
 /* =========================================================
+   CLICKABLE PRODUCT CARD
+========================================================= */
+
+.product-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 18px;
+}
+
+.product-link:hover,
+.product-link:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================================================
    PRODUCT CARD
 ========================================================= */
+
 .product {
     position: relative;
     background: #161616;
@@ -282,13 +300,19 @@ body {
     border-radius: 18px;
     overflow: hidden;
     transition: 0.35s ease;
+    height: 100%;
 }
-.product:hover {
+
+.product-link:hover .product {
     transform: translateY(-8px);
     border-color: rgba(255, 122, 0, 0.5);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
-/* Product Image */
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
 .product img {
     width: 100%;
     height: 280px;
@@ -296,20 +320,29 @@ body {
     display: block;
     transition: 0.4s ease;
 }
-.product:hover img {
+
+.product-link:hover .product img {
     transform: scale(1.05);
 }
-/* Product Content */
+
+/* =========================================================
+   PRODUCT CONTENT
+========================================================= */
+
 .product .content {
     padding: 22px;
 }
-/* Badge */
+
+/* =========================================================
+   BADGE
+========================================================= */
+
 .badge {
     position: absolute;
     top: 18px;
     left: 18px;
     background: #ff7a00;
-    color: white;
+    color: #ffffff;
     padding: 6px 15px;
     border-radius: 30px;
     font-size: 0.75rem;
@@ -317,51 +350,77 @@ body {
     letter-spacing: 1px;
     z-index: 5;
 }
+
 .badge.sale {
     background: #e53935;
 }
-/* Rating */
+
+/* =========================================================
+   RATING
+========================================================= */
+
 .rating {
     color: #ffc107;
     font-size: 0.95rem;
     margin-bottom: 12px;
 }
+
 .rating span {
     color: #999999;
     font-size: 0.85rem;
     margin-left: 5px;
 }
-/* Product Title */
+
+/* =========================================================
+   PRODUCT TITLE
+========================================================= */
+
 .product h3 {
-    font-size: 1.45rem;
     margin: 0;
-    color: white;
+    color: #ffffff;
+    font-size: 1.45rem;
     font-weight: 700;
 }
-/* Product Description */
+
+/* =========================================================
+   PRODUCT DESCRIPTION
+========================================================= */
+
 .product p {
+    margin: 15px 0 25px;
     color: #b5b5b5;
     font-size: 0.95rem;
     line-height: 1.7;
-    margin: 15px 0 25px;
 }
-/* Bottom Row */
+
+/* =========================================================
+   BOTTOM ROW
+========================================================= */
+
 .bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
 }
-/* Price */
+
+/* =========================================================
+   PRICE
+========================================================= */
+
 .price {
     color: #ff7a00;
     font-size: 1.4rem;
     font-weight: 700;
 }
-/* Add To Cart Button */
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
 .product button {
     background: #ff7a00;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 12px 22px;
     border-radius: 8px;
@@ -369,55 +428,30 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease;
+    
+    /* Makes the whole card clickable */
+    pointer-events: none;
 }
-.product button:hover {
+
+.product-link:hover .product button {
     background: #ff922e;
     transform: translateY(-3px);
     box-shadow: 0 8px 18px rgba(255, 122, 0, 0.35);
 }
-.product button:active {
+
+.product-link:active .product button {
     transform: scale(0.97);
 }
+
 /* =========================================================
    PRODUCT EMPTY / FUTURE STATES
 ========================================================= */
+
 .no-products {
     text-align: center;
-    color: #aaa;
+    color: #aaaaaa;
     font-size: 1.1rem;
     padding: 50px;
-}
-/* =========================================================
-   10. PAGINATION
-========================================================= */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    padding: 60px 8%;
-}
-.pagination a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 45px;
-    height: 45px;
-    padding: 0 18px;
-    background: #161616;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: 0.3s ease;
-}
-.pagination a:hover,
-.pagination .active {
-    background: #ff7a00;
-    border-color: #ff7a00;
-}
-.pagination i {
-    margin-left: 8px;
 }
 /* =========================================================
    11. FOOTER

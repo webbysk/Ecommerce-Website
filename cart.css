@@ -1,0 +1,306 @@
+/* =========================================================
+   1. GLOBAL RESET
+========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.page {
+    width: 100%;
+}
+
+/* =========================================================
+   2. UTILITIES
+========================================================= */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* =========================================================
+   3. NAVBAR
+========================================================= */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 8%;
+    background: #0b0b0b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding: 8px 0;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff7a00;
+    transform: scaleX(0);
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* =========================================================
+   4. SEARCH BAR
+========================================================= */
+.search form {
+    display: flex;
+    width: 280px;
+}
+
+.search input {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #161616;
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.search input::placeholder {
+    color: #888;
+}
+
+.search input:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 10px rgba(255, 122, 0, 0.25);
+}
+
+/* =========================================================
+   5. AUTH BUTTONS
+========================================================= */
+.register-btn {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.register-btn a {
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn-login {
+    color: #aaaaaa;
+}
+
+.btn-login:hover {
+    color: white;
+}
+
+.btn-signup {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.btn-signup:hover {
+    background: #ff7a00;
+    color: white;
+}
+
+.footer {
+    background: #111111;
+    color: #b8b8b8;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 70px 8%;
+}
+
+.footer-box h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.footer-box h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.footer-box p {
+    line-height: 1.8;
+    color: #999;
+}
+
+.footer-box a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: 0.3s ease;
+}
+
+.footer-box a:hover {
+    color: #ff7a00;
+    padding-left: 8px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1b1b1b;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 0;
+}
+
+.social-icons a:hover {
+    background: #ff7a00;
+    transform: translateY(-4px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 22px 8%;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb-section {
+    width: 100%;
+    padding: 22px 8%;
+    background: #111111;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.breadcrumb a {
+    color: #9c9c9c;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #ff7a00;
+}
+
+.separator {
+    color: #666666;
+    font-size: .8rem;
+}
+
+.current {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width:768px){
+
+    .breadcrumb-section{
+        padding:18px 6%;
+    }
+
+    .breadcrumb{
+        gap:10px;
+    }
+
+    .breadcrumb a,
+    .current{
+        font-size:.9rem;
+    }
+
+}
